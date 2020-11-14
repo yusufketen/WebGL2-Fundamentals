@@ -96,6 +96,7 @@ function init() {
         colorLocation: color_location,
     };
 
+    // Scaling
     let scaleMatrix = [0.75, 0, 0, 0,
                        0, 0.75, 0, 0,
                        0, 0, 1, 0,
@@ -103,6 +104,18 @@ function init() {
 
     const scaleLocation = gl.getUniformLocation(program, "u_scale")
     gl.uniformMatrix4fv(scaleLocation, false, scaleMatrix)
+
+    // Rotating
+    let angleDegree = 45;
+
+    const radian = Math.PI/180;
+    const angleRadian = angleDegree * radian;
+
+
+
+    const rotationLocation = gl.getUniformLocation(program, "angle")
+    gl.uniform1f(rotationLocation, angleRadian);
+
 
     drawSquare(gl, squareInstance);
 }
