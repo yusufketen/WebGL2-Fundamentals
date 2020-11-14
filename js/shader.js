@@ -9,7 +9,7 @@ const v_shader = `#version 300 es
     
     void main() {
         float c = cos(angle);
-        float s = cos(angle);
+        float s = sin(angle);
     
 
                                

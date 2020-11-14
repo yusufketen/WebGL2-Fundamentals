@@ -111,8 +111,6 @@ function init() {
     const radian = Math.PI/180;
     const angleRadian = angleDegree * radian;
 
-
-
     const rotationLocation = gl.getUniformLocation(program, "angle")
     gl.uniform1f(rotationLocation, angleRadian);
 
