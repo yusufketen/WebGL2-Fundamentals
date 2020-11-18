@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Three.js Tutorial</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../three.js/three.js"></script>
+    <script>
+        console.log("test");
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Game Logic
+        var update = function() {};
+
+        //  Draw the scene
+        var render = function() {
+            renderer.render(scene, camera);
+        };
+
+        // Run game loop(update, render, repeat)
+        var GameLoop = function() {
+            requestAnimationFrame(GameLoop);
+
+            update();
+            render();
+        };
+
+        GameLoop();
+    </script>
+</body>
+
+</html>
